@@ -112,3 +112,37 @@ const Animals={
 const dog=Object.create(Animals)
 dog.name="China dog";
 dog.eat()
+
+// using classes can help in inhertances
+
+
+// call,apply,bind
+
+//a area of rectangle using bind with fixed widith
+function areaOfrectangle(widith,heigth){
+    return widith*heigth
+
+}
+const areaWithfixedWidith=areaOfrectangle.bind(null,10)
+console.log(areaWithfixedWidith(5))
+
+// find max in array 
+
+const numbers=[1,2,4,3,100,5,7,8,5,3,2,2,34,65]
+const maxmum=Math.max.apply(null,numbers)
+const min=Math.min.apply(null,numbers)
+const exp=Math.exp.apply(null,numbers)
+const ln=Math.LN2
+console.log(ln)
+console.log(exp)
+console.log(min)
+console.log(maxmum)
+
+// function  capitalize
+
+function capitalize(){
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+const names="hello world"
+const capitalized=capitalize.call(names)
+console.log(capitalized)
