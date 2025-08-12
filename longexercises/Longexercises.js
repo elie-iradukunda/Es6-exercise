@@ -40,3 +40,75 @@ arr.forEach((ele, ind)=>{
 
 }
 console.log(ValidatePhoneNumber('923-567-609'))
+
+
+// create counter with closures
+
+function createCounter(){
+    let count=1
+
+    return function counterfn(){
+        count++
+        return count
+    }
+}
+
+const count1=createCounter()
+const count2=createCounter()
+console.log(count1())
+console.log(count1())
+console.log(count1())
+console.log(count1())
+console.log(count2())
+
+// prototype inheritance
+
+// using constractor function
+function Person(name,age){
+    this.name=name;
+    this.age=age;
+
+}
+
+Person.prototype.greet=function(){
+    console.log(`hello my name is ${this.name} and i have ${this.age} years old`)
+
+
+}
+
+const person1=new Person("mugisha",30)
+const person2=new Person("karisa",90)
+
+console.log(person1)
+console.log(person2)
+
+person1.greet()
+
+//. Inheritance Using Prototypes
+function Students(name,age,grade){
+    Person.call(this,name,age)// here i used properties to inherit
+    this.grade=grade
+}
+Students.prototype=Object.create(Person.prototype)
+Students.prototype.study=function(){
+    console.log(`${this.name} is studying in grade ${this.grade}.`);
+
+}
+
+const studedent1=new Students("rukundo",30,"A")
+console.log(studedent1)
+studedent1.greet()
+studedent1.study()
+
+// using object.create directly
+
+const Animals={
+    eat:function(){
+        console.log(`${this.name} is eating .`)
+
+    }
+};
+
+const dog=Object.create(Animals)
+dog.name="China dog";
+dog.eat()
