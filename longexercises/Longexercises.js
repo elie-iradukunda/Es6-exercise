@@ -205,3 +205,19 @@ const kangalo1=new Kangalo('kana',80,60)
 console.log(kangalo1)
 kangalo1.greet()
 kangalo1.sounding()
+
+// classes using extend  
+class Player {
+    constructor(name, country) {
+        this.name = name;
+        this.country = country;
+    }
+    
+    introduce() { 
+        console.log(`${this.name} was born in ${this.country}`);
+    }
+}
+
+const messi = new Player("Messi", "Argentina");
+
+messi.introduce();
