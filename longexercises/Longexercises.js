@@ -146,3 +146,21 @@ function capitalize(){
 const names="hello world"
 const capitalized=capitalize.call(names)
 console.log(capitalized)
+
+
+//counting zeroes function that counts how many zeros appear in all numbers from 1 to n, following that logic.
+
+
+function countZeroes(num){
+    let count =0;
+    let divisors=10
+    while(divisors<=num){
+        count+=Math.floor(num/divisors)
+        divisors*=10;
+    }
+
+    return count
+}
+console.log(countZeroes(50));   
+console.log(countZeroes(100));  
+console.log(countZeroes(200));  
