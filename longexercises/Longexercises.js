@@ -164,3 +164,44 @@ function countZeroes(num){
 console.log(countZeroes(50));   
 console.log(countZeroes(100));  
 console.log(countZeroes(200));  
+
+
+// clases
+
+class Animal {
+    constructor(type,age){
+        this.type=type;
+        this.age=age
+       
+    }
+
+
+
+    sounding(sound){
+this.sound=sound
+console.log(`this ${this.type} is having ${this.age}`)
+
+    }
+}
+
+const animal1=new Animal('kangalo',90)
+
+console.log(animal1)
+animal1.sounding()
+
+
+class Kangalo extends Animal{
+    constructor(type,age,times){
+        super(type,age);
+        this.times=times
+    }
+
+    greet(){
+        console.log(`hello ${this.type} here you have ${this.age} and you born ${this.times} times`)
+    }
+}
+
+const kangalo1=new Kangalo('kana',80,60)
+console.log(kangalo1)
+kangalo1.greet()
+kangalo1.sounding()
